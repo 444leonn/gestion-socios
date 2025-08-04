@@ -1,0 +1,27 @@
+# Build Folders
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+
+# VS Code
+.vscode/
+
+# NuGet Packages
+*.nupkg
+packages/
+*.snupkg
+
+# ASP.NET Secret files
+secrets.json
+
+# Environment-specific configuration
+appsettings.Development.json
+
+# Node.js
+node_modules/
+
+# Others
+*.log
