@@ -6,7 +6,7 @@ IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'db_gestion_socios')
 Debemos almacenar los datos de cada socio registrado
 */
 CREATE TABLE [db_gestion_socios].[socios] (
-    [id] int NOT NULL,
+    [id] int IDENTITY(1,1) NOT NULL,
     [nombre] varchar(max) NOT NULL,
     [apellido] varchar(max) NOT NULL,
     [fecha_nacimiento] date NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE [db_gestion_socios].[socios] (
 Almacenamos los distintos tipos de socios que hay (por el momento es grupo familiar y simple)
 */
 CREATE TABLE [db_gestion_socios].[tipos_socios] (
-    [id] int NOT NULL,
+    [id] int IDENTITY(1,1) NOT NULL,
     [nombre] varchar(max) NOT NULL,
     [genero] varchar(max),
     [cuota] float NOT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE [db_gestion_socios].[tipos_socios] (
 Almacenamos los deportes que hacen los distintos socios
 */
 CREATE TABLE [db_gestion_socios].[deportes_socios] (
-    [id] int NOT NULL,
+    [id] int IDENTITY(1,1) NOT NULL,
     [id_deporte] int NOT NULL,
     [id_socio] int NOT NULL,
     PRIMARY KEY ([id])
@@ -53,7 +53,7 @@ CREATE TABLE [db_gestion_socios].[deportes_socios] (
 Almacenamos los distintos deportes que los distintos socios pueden realizar
 */
 CREATE TABLE [db_gestion_socios].[deportes] (
-    [id] int NOT NULL,
+    [id] int IDENTITY(1,1) NOT NULL,
     [nombre] varchar(max) NOT NULL,
     PRIMARY KEY ([id])
 );
