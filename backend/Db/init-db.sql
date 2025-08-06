@@ -1,3 +1,12 @@
+IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = N'db_gestion_socios')
+BEGIN
+    CREATE DATABASE db_gestion_socios;
+END;
+GO
+
+USE db_gestion_socios;
+GO
+
 IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'db_gestion_socios')
     BEGIN
         EXEC('CREATE SCHEMA [db_gestion_socios]');
