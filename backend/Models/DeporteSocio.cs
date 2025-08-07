@@ -9,6 +9,6 @@ public class DeporteSocio
     public int IdDeporte { get; set; }
     public Deporte? Deporte { get; set; }
 
-    public int IdSsocio { get; set; }
+    public int IdSocio { get; set; }
     public Socio? Socio { get; set; }
 }

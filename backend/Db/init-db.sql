@@ -7,81 +7,76 @@ GO
 USE db_gestion_socios;
 GO
 
-IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'db_gestion_socios')
-    BEGIN
-        EXEC('CREATE SCHEMA [db_gestion_socios]');
-    END;
 /**
 Debemos almacenar los datos de cada socio registrado
 */
-CREATE TABLE [db_gestion_socios].[socios] (
-    [id] int IDENTITY(1,1) NOT NULL,
-    [nombre] varchar(max) NOT NULL,
-    [apellido] varchar(max) NOT NULL,
-    [fecha_nacimiento] date NOT NULL,
-    [dni] int NOT NULL UNIQUE,
-    [password] varchar(max),
-    [id_titular] int,
-    [id_tipo] int NOT NULL,
-    [telefono] varchar(max) NOT NULL,
-    [mail] varchar(max) NOT NULL,
-    [calle] varchar(max),
-    [altura] int,
-    [cp] int,
-    [localidad] varchar(max),
-    PRIMARY KEY ([id])
+CREATE TABLE [Socios] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Nombre] varchar(max) NOT NULL,
+    [Apellido] varchar(max) NOT NULL,
+    [FechaNacimiento] date NOT NULL,
+    [Dni] int NOT NULL UNIQUE,
+    [Password] varchar(max),
+    [IdTitular] int,
+    [IdTipo] int NOT NULL,
+    [Telefono] varchar(max) NOT NULL,
+    [Mail] varchar(max) NOT NULL,
+    [Calle] varchar(max),
+    [Altura] int,
+    [Cp] int,
+    [Localidad] varchar(max),
+    PRIMARY KEY ([Id])
 );
 
 
 /**
 Almacenamos los distintos tipos de socios que hay (por el momento es grupo familiar y simple)
 */
-CREATE TABLE [db_gestion_socios].[tipos_socios] (
-    [id] int IDENTITY(1,1) NOT NULL,
-    [nombre] varchar(max) NOT NULL,
-    [genero] varchar(max),
-    [cuota] float NOT NULL,
-    [edad_desde] int,
-    [edad_hasta] int,
-    PRIMARY KEY ([id])
+CREATE TABLE [TiposSocios] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Nombre] varchar(max) NOT NULL,
+    [Genero] varchar(max),
+    [Cuota] float NOT NULL,
+    [EdadDesde] int,
+    [EdadHasta] int,
+    PRIMARY KEY ([Id])
 );
 
 
 /**
 Almacenamos los deportes que hacen los distintos socios
 */
-CREATE TABLE [db_gestion_socios].[deportes_socios] (
-    [id] int IDENTITY(1,1) NOT NULL,
-    [id_deporte] int NOT NULL,
-    [id_socio] int NOT NULL,
-    PRIMARY KEY ([id])
+CREATE TABLE [DeportesSocios] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [IdDeporte] int NOT NULL,
+    [IdSocio] int NOT NULL,
+    PRIMARY KEY ([Id])
 );
 
 
 /**
 Almacenamos los distintos deportes que los distintos socios pueden realizar
 */
-CREATE TABLE [db_gestion_socios].[deportes] (
-    [id] int IDENTITY(1,1) NOT NULL,
-    [nombre] varchar(max) NOT NULL,
-    PRIMARY KEY ([id])
+CREATE TABLE [Deportes] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Nombre] varchar(max) NOT NULL,
+    PRIMARY KEY ([Id])
 );
 
 -- Foreign key constraints
--- Schema: db_gestion_socios
-ALTER TABLE [db_gestion_socios].[deportes_socios]
+ALTER TABLE [DeportesSocios]
     ADD CONSTRAINT [fk_deportes_socios_deporte]
-        FOREIGN KEY ([id_deporte]) REFERENCES [db_gestion_socios].[deportes]([id])
+        FOREIGN KEY ([IdDeporte]) REFERENCES [Deportes]([Id])
         ON DELETE RESTRICT,
     CONSTRAINT [fk_deportes_socios_socio]
-        FOREIGN KEY ([id_socio]) REFERENCES [db_gestion_socios].[socios]([id])
+        FOREIGN KEY ([IdSocio]) REFERENCES [Socios]([Id])
         ON DELETE CASCADE;
 
-ALTER TABLE [db_gestion_socios].[socios]
+ALTER TABLE [Socios]
     ADD CONSTRAINT [fk_socios_titular]
-        FOREIGN KEY ([id_titular]) REFERENCES [db_gestion_socios].[socios]([id]);
+        FOREIGN KEY ([IdTitular]) REFERENCES [Socios]([Id]);
 
-ALTER TABLE [db_gestion_socios].[socios]
+ALTER TABLE [Socios]
     ADD CONSTRAINT [fk_socios_tipo]
-        FOREIGN KEY ([id_tipo]) REFERENCES [db_gestion_socios].[tipos_socios]([id])
+        FOREIGN KEY ([IdTipo]) REFERENCES [TiposSocios]([Id])
         ON DELETE RESTRICT;
