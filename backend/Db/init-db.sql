@@ -71,9 +71,11 @@ CREATE TABLE [db_gestion_socios].[deportes] (
 -- Schema: db_gestion_socios
 ALTER TABLE [db_gestion_socios].[deportes_socios]
     ADD CONSTRAINT [fk_deportes_socios_deporte]
-        FOREIGN KEY ([id_deporte]) REFERENCES [db_gestion_socios].[deportes]([id]),
+        FOREIGN KEY ([id_deporte]) REFERENCES [db_gestion_socios].[deportes]([id])
+        ON DELETE RESTRICT,
     CONSTRAINT [fk_deportes_socios_socio]
-        FOREIGN KEY ([id_socio]) REFERENCES [db_gestion_socios].[socios]([id]);
+        FOREIGN KEY ([id_socio]) REFERENCES [db_gestion_socios].[socios]([id])
+        ON DELETE CASCADE;
 
 ALTER TABLE [db_gestion_socios].[socios]
     ADD CONSTRAINT [fk_socios_titular]
@@ -81,4 +83,5 @@ ALTER TABLE [db_gestion_socios].[socios]
 
 ALTER TABLE [db_gestion_socios].[socios]
     ADD CONSTRAINT [fk_socios_tipo]
-        FOREIGN KEY ([id_tipo]) REFERENCES [db_gestion_socios].[tipos_socios]([id]);
+        FOREIGN KEY ([id_tipo]) REFERENCES [db_gestion_socios].[tipos_socios]([id])
+        ON DELETE RESTRICT;
