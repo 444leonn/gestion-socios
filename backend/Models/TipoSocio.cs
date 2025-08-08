@@ -15,6 +15,4 @@ public class TipoSocio
     public int? EdadDesde { get; set; }
 
     public int? EdadHasta { get; set; }
-
-    public ICollection<Socio> Socios { get; set; } = new List<Socio>();
 }

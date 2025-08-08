@@ -19,7 +19,6 @@ public class Socio
     public int? IdTitular { get; set; }
 
     public int IdTipo { get; set; }
-    public TipoSocio? TipoSocio { get; set; }
 
     public string Telefono { get; set; } = string.Empty;
 
@@ -27,11 +26,9 @@ public class Socio
 
     public string? Calle { get; set; }
 
-    public int Altura { get; set; }
+    public int? Altura { get; set; }
 
-    public int Cp { get; set; }
+    public int? Cp { get; set; }
 
     public string? Localidad { get; set; }
-
-    public ICollection<DeporteSocio> DeportesSocios { get; set; } = new List<DeporteSocio>();
 }
