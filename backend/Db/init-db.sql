@@ -17,8 +17,8 @@ CREATE TABLE [Socios] (
     [FechaNacimiento] date NOT NULL,
     [Dni] int NOT NULL UNIQUE,
     [Password] varchar(max),
-    [IdTitular] int,
-    [IdTipo] int NOT NULL,
+    [TitularId] int,
+    [TipoSocioId] int NOT NULL,
     [Telefono] varchar(max) NOT NULL,
     [Mail] varchar(max) NOT NULL,
     [Calle] varchar(max),
@@ -48,8 +48,8 @@ Almacenamos los deportes que hacen los distintos socios
 */
 CREATE TABLE [DeportesSocios] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [IdDeporte] int NOT NULL,
-    [IdSocio] int NOT NULL,
+    [DeporteId] int NOT NULL,
+    [SocioId] int NOT NULL,
     PRIMARY KEY ([Id])
 );
 
