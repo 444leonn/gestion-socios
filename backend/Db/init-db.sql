@@ -66,8 +66,7 @@ CREATE TABLE [Deportes] (
 -- Foreign key constraints
 ALTER TABLE [DeportesSocios]
     ADD CONSTRAINT [fk_deportes_socios_deporte]
-        FOREIGN KEY ([IdDeporte]) REFERENCES [Deportes]([Id])
-        ON DELETE RESTRICT,
+        FOREIGN KEY ([IdDeporte]) REFERENCES [Deportes]([Id]),
     CONSTRAINT [fk_deportes_socios_socio]
         FOREIGN KEY ([IdSocio]) REFERENCES [Socios]([Id])
         ON DELETE CASCADE;
@@ -78,5 +77,4 @@ ALTER TABLE [Socios]
 
 ALTER TABLE [Socios]
     ADD CONSTRAINT [fk_socios_tipo]
-        FOREIGN KEY ([IdTipo]) REFERENCES [TiposSocios]([Id])
-        ON DELETE RESTRICT;
+        FOREIGN KEY ([IdTipo]) REFERENCES [TiposSocios]([Id]);
