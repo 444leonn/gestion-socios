@@ -15,6 +15,7 @@ CREATE TABLE [Socios] (
     [Nombre] varchar(max) NOT NULL,
     [Apellido] varchar(max) NOT NULL,
     [FechaNacimiento] date NOT NULL,
+    [FechaAlt] datetime DEFAULT GETDATE(),
     [Dni] int NOT NULL UNIQUE,
     [Password] varchar(max),
     [TitularId] int,
@@ -66,15 +67,15 @@ CREATE TABLE [Deportes] (
 -- Foreign key constraints
 ALTER TABLE [DeportesSocios]
     ADD CONSTRAINT [fk_deportes_socios_deporte]
-        FOREIGN KEY ([IdDeporte]) REFERENCES [Deportes]([Id]),
+        FOREIGN KEY ([DeporteId]) REFERENCES [Deportes]([Id]),
     CONSTRAINT [fk_deportes_socios_socio]
-        FOREIGN KEY ([IdSocio]) REFERENCES [Socios]([Id])
+        FOREIGN KEY ([SocioId]) REFERENCES [Socios]([Id])
         ON DELETE CASCADE;
 
 ALTER TABLE [Socios]
     ADD CONSTRAINT [fk_socios_titular]
-        FOREIGN KEY ([IdTitular]) REFERENCES [Socios]([Id]);
+        FOREIGN KEY ([TitularId]) REFERENCES [Socios]([Id]);
 
 ALTER TABLE [Socios]
     ADD CONSTRAINT [fk_socios_tipo]
-        FOREIGN KEY ([IdTipo]) REFERENCES [TiposSocios]([Id]);
+        FOREIGN KEY ([TipoSocioId]) REFERENCES [TiposSocios]([Id]);

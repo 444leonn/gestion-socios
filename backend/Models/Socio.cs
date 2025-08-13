@@ -12,6 +12,8 @@ public class Socio
 
     public DateOnly FechaNacimiento { get; set; }
 
+    public DateTime? FechaAlta { get; set; } = DateTime.Now;
+
     public int Dni { get; set; }
 
     public string? Password { get; set; }
