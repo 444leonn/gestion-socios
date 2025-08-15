@@ -51,11 +51,18 @@ namespace backend.Controllers
                 Nombre = deporteDto.Nombre
             };
 
-            _context.Deportes.Add(deporte);
-            await _context.SaveChangesAsync();
+            try
+            {
+                _context.Deportes.Add(deporte);
+                await _context.SaveChangesAsync();
 
-            deporteDto.Id = deporte.Id;
-            return Ok(deporteDto);
+                deporteDto.Id = deporte.Id;
+                return Created();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
         }
     }
 }
