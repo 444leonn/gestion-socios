@@ -43,6 +43,35 @@ namespace backend.Controllers
             }
         }
 
+        [HttpGet("{id}")]
+        public async Task<ActionResult<DeporteDto>> GetDeporte(int id)
+        {
+            Deporte? deporte = await _context.Deportes.FirstOrDefaultAsync(d => d.Id == id);
+
+            try
+            {
+                if (deporte == null)
+                {
+                    return NotFound("No se encontro el deporte");
+                }
+                else
+                {
+                    DeporteDto deporteDto = new DeporteDto
+                    {
+                        Id = deporte.Id,
+                        Nombre = deporte.Nombre
+                    };
+
+                    return Ok(deporteDto);
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+            
+        }
+
         [HttpPost]
         public async Task<ActionResult<DeporteDto>> PostDeporte(DeporteDto deporteDto)
         {
@@ -57,7 +86,7 @@ namespace backend.Controllers
                 await _context.SaveChangesAsync();
 
                 deporteDto.Id = deporte.Id;
-                return Created();
+                return CreatedAtAction(nameof(GetDeporte), new { id = deporte.Id }, deporteDto);
             }
             catch (Exception ex)
             {
