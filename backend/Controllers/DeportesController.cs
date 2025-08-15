@@ -9,11 +9,11 @@ namespace backend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DeporteController : ControllerBase
+    public class DeportesController : ControllerBase
     {
         private readonly AppDbContext _context;
 
-        public DeporteController(AppDbContext context)
+        public DeportesController(AppDbContext context)
         {
             _context = context;
         }
@@ -24,7 +24,8 @@ namespace backend.Controllers
             var deportes = await _context.Deportes.ToListAsync();
             try
             {
-                if (deportes == null || !deportes.Any()) {
+                if (deportes == null || !deportes.Any())
+                {
                     return NotFound("No se encontraron deportes.");
                 }
 
@@ -40,6 +41,21 @@ namespace backend.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<DeporteDto>> PostDeporte(DeporteDto deporteDto)
+        {
+            Deporte deporte = new Deporte
+            {
+                Nombre = deporteDto.Nombre
+            };
+
+            _context.Deportes.Add(deporte);
+            await _context.SaveChangesAsync();
+
+            deporteDto.Id = deporte.Id;
+            return Ok(deporteDto);
         }
     }
 }
