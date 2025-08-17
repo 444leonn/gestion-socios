@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using backend.Models;
 using backend.Data;
 using backend.Dto;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace backend.Controllers
 {
@@ -19,7 +20,7 @@ namespace backend.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<DeporteDto>>> GetDeportes()
+        public async Task<ActionResult<IEnumerable<DeporteDto>>> GetAllDeportes()
         {
             var deportes = await _context.Deportes.ToListAsync();
             try
@@ -44,9 +45,9 @@ namespace backend.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<DeporteDto>> GetDeporte(int id)
+        public async Task<ActionResult<DeporteDto>> GetByIdDeporte(int id)
         {
-            Deporte? deporte = await _context.Deportes.FirstOrDefaultAsync(d => d.Id == id);
+            Deporte? deporte = await _context.Deportes.FindAsync(id);
 
             try
             {
@@ -69,11 +70,10 @@ namespace backend.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
-            
         }
 
         [HttpPost]
-        public async Task<ActionResult<DeporteDto>> PostDeporte(DeporteDto deporteDto)
+        public async Task<ActionResult<DeporteDto>> CreateDeporte([FromBody] DeporteDto deporteDto)
         {
             Deporte deporte = new Deporte
             {
@@ -86,7 +86,36 @@ namespace backend.Controllers
                 await _context.SaveChangesAsync();
 
                 deporteDto.Id = deporte.Id;
-                return CreatedAtAction(nameof(GetDeporte), new { id = deporte.Id }, deporteDto);
+                return CreatedAtAction(nameof(GetByIdDeporte), new { id = deporte.Id }, deporteDto);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateDeporte(int id, [FromBody] DeporteDto deporteDto)
+        {
+            if (id != deporteDto.Id)
+            {
+                return BadRequest();
+            }
+
+            try
+            {
+                Deporte? deporte = await _context.Deportes.FindAsync(id);
+
+                if (deporte == null)
+                {
+                    return NotFound();
+                }
+
+                deporte.Nombre = deporteDto.Nombre;
+
+                await _context.SaveChangesAsync();
+
+                return NoContent();
             }
             catch (Exception ex)
             {
