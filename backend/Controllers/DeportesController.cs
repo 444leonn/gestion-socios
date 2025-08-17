@@ -94,17 +94,12 @@ namespace backend.Controllers
             }
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateDeporte(int id, [FromBody] DeporteDto deporteDto)
+        [HttpPut]
+        public async Task<IActionResult> UpdateDeporte([FromBody] DeporteDto deporteDto)
         {
-            if (id != deporteDto.Id)
-            {
-                return BadRequest();
-            }
-
             try
             {
-                Deporte? deporte = await _context.Deportes.FindAsync(id);
+                Deporte? deporte = await _context.Deportes.FindAsync(deporteDto.Id);
 
                 if (deporte == null)
                 {
