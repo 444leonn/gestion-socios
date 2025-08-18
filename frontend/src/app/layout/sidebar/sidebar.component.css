@@ -1,0 +1,106 @@
+/* Sidebar */
+#sidebar {
+  position: absolute; 
+  top: 0px; 
+  left: 0px; 
+  width: 288px; 
+  height: 900px; 
+  background: #FFFFFFFF;
+  border-radius: 0px; 
+  box-shadow: 0px 0px 1px #171a1f12, 0px 0px 2px #171a1f1F;
+}
+
+/* Logo */
+#logo-image {
+  position: absolute; 
+  top: 20px; 
+  left: 16px; 
+  width: 106px; 
+  height: 36px; 
+  border-radius: 6px;
+}
+
+/* Sidebar Menu */
+.sidebar-menu {
+  position: absolute; 
+  top: 80px; 
+  left: 16px; 
+  width: 256px; 
+  height: 235.2px; 
+  display: flex; 
+  flex-direction: column; 
+  font-family: Inter, sans-serif;
+  font-size: 14px; 
+  line-height: 22px; 
+  font-weight: 400;
+  opacity: 1; 
+  gap: 8.8px; 
+}
+
+/* Sidebar Menu Item */
+.sidebar-menu .sidebar-menu-item {
+  padding: 16px 16px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: left; 
+  color: #565D6DFF;
+  background: transparent;
+  border-radius: 6px;
+  gap: 8px; 
+  cursor: pointer; 
+  white-space: nowrap; 
+  transition: background 0.2s, color 0.2s;
+  text-decoration: none;
+}
+
+/* Sidebar Menu Item - Indent */
+.sidebar-menu .sidebar-menu-item.indent {
+  padding-left: 31px; 
+}
+
+/* Sidebar Menu Item - Selected */
+.sidebar-menu .sidebar-menu-item.selected {
+  position: relative; 
+  font-weight: 700; 
+  color: #CED0F8FF;
+  background:  #2C35E0FF;
+}
+
+/* Sidebar Menu Item - Selected Hover/Active */
+.sidebar-menu .sidebar-menu-item.selected:hover:active {
+  color: #2C35E0FF;
+  background: #CED0F8FF;
+}
+
+/* Sidebar Menu Item - Hover */
+.sidebar-menu .sidebar-menu-item:hover {
+  background: #F0F0F0;
+  color: #2C35E0FF;
+}
+
+/* Sidebar Menu Icon */
+.sidebar-menu svg.icon {
+  width: 24px; 
+  height: 24px; 
+  fill: currentColor; 
+}
+
+/* Sidebar Menu Items by Position */
+.sidebar-menu .sidebar-menu-item:nth-child(1) {
+  font-family: Inter, sans-serif; 
+  font-size: 14px; 
+  line-height: 22px; 
+  font-weight: 700; 
+  color: #FFFFFFFF;
+}
+
+.sidebar-menu .sidebar-menu-item:nth-child(2),
+.sidebar-menu .sidebar-menu-item:nth-child(3),
+.sidebar-menu .sidebar-menu-item:nth-child(4),
+.sidebar-menu .sidebar-menu-item:nth-child(5) {
+  font-family: Inter, sans-serif; 
+  font-size: 14px; 
+  line-height: 22px; 
+  font-weight: 400; 
+  color: #565D6DFF;
+}

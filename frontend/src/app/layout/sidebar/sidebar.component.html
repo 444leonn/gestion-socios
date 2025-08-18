@@ -1,0 +1,14 @@
+
+<aside id="sidebar">
+  <img id="logo-image" src="">
+
+  <div class="sidebar-menu">
+    <a *ngFor="let link of links; let i = index"
+      href="#"
+      class="sidebar-menu-item"
+      [class.selected]="selectedIndex === i"
+      (click)="selectLink(i); $event.preventDefault()">
+      {{ link.label }}
+    </a>
+  </div>
+</aside>

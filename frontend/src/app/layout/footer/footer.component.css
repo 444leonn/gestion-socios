@@ -1,0 +1,43 @@
+/* Footer */
+footer {
+  position: absolute; 
+  top: 806px; 
+  left: 1px; 
+  width: 1438px; 
+  height: 94px; 
+  background: #FAFAFBFF;
+  border-radius: 0px; 
+}
+
+#leyenda-copy {
+  position: absolute; 
+  top: 64px; 
+  left: 580px; 
+  font-family: Inter;
+  font-size: 14px; 
+  line-height: 22px; 
+  font-weight: 400; 
+  color: #424856FF;
+}
+
+.enlaces {
+  position: relative; 
+  padding: 15px;
+  text-decoration: none;
+  top: 26px; 
+  left: 448px; 
+  font-family: Inter;
+  font-size: 18px; 
+  line-height: 28px; 
+  font-weight: 400; 
+  color: #171A1FFF;
+}
+
+.icon {
+  position: absolute; 
+  top: 64px; 
+  left: 1204px; 
+  width: 24px; 
+  height: 24px; 
+  fill: #171A1FFF;
+}
