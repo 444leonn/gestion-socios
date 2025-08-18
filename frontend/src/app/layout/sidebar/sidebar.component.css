@@ -74,23 +74,3 @@
   height: 24px; 
   fill: currentColor; 
 }
-
-/* Sidebar Menu Items by Position */
-.sidebar-menu .sidebar-menu-item:nth-child(1) {
-  font-family: Inter, sans-serif; 
-  font-size: 14px; 
-  line-height: 22px; 
-  font-weight: 700; 
-  color: #FFFFFFFF;
-}
-
-.sidebar-menu .sidebar-menu-item:nth-child(2),
-.sidebar-menu .sidebar-menu-item:nth-child(3),
-.sidebar-menu .sidebar-menu-item:nth-child(4),
-.sidebar-menu .sidebar-menu-item:nth-child(5) {
-  font-family: Inter, sans-serif; 
-  font-size: 14px; 
-  line-height: 22px; 
-  font-weight: 400; 
-  color: #565D6DFF;
-}
