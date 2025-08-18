@@ -7,7 +7,7 @@ import { Component } from "@angular/core";
     selector: "inicio-page",
     standalone: true,
     imports: [ Navbar, Sidebar, Footer ],
-    templateUrl: "./inicio.component.html"
+    templateUrl: "./home-page.component.html"
 })
 
 export class Home { };
