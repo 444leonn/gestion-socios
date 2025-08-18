@@ -10,4 +10,4 @@ import { Component } from "@angular/core";
     templateUrl: "./inicio.component.html"
 })
 
-export class Inicio { };
+export class Home { };
