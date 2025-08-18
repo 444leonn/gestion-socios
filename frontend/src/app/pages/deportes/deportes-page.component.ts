@@ -4,10 +4,10 @@ import { Footer } from "../../layout/footer/footer.component";
 import { Component } from "@angular/core";
 
 @Component({
-    selector: "inicio-page",
+    selector: "deportes-page",
     standalone: true,
     imports: [ Navbar, Sidebar, Footer ],
-    templateUrl: "./home-page.component.html"
+    templateUrl: "./deportes-page.component.html"
 })
 
-export class Home { };
+export class Deportes { };

@@ -1,28 +1,21 @@
-import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { Component } from "@angular/core";
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
     selector: "app-sidebar",
     standalone: true,
-    imports: [CommonModule],
+    imports: [CommonModule, RouterModule],
     templateUrl: "./sidebar.component.html",
     styleUrls: ["./sidebar.component.css"]
 })
 
 export class Sidebar {
-    @Input() selectedIndex: number = 0;
-    @Output() selectedIndexChange = new EventEmitter<number>();
-
     links = [
-        { label: "Inicio" },
-        { label: "Socios" },
-        { label: "Grupos" },
-        { label: "Deportes" },
-        { label: "Tipos y Cuotas" }
+        { label: "Inicio", route: "/" },
+        { label: "Socios", route: "/socios" },
+        { label: "Grupos", route: "/grupos" },
+        { label: "Deportes", route: "/deportes" },
+        { label: "Tipos y Cuotas", route: "/tipos" }
     ];
-
-    selectLink(index: number) {
-        this.selectedIndex = index;
-        this.selectedIndexChange.emit(index);
-    }
 }

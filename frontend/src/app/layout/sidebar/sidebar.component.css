@@ -48,16 +48,16 @@
   padding-left: 31px; 
 }
 
-/* Sidebar Menu Item - Selected */
-.sidebar-menu .sidebar-menu-item.selected {
+/* Sidebar Menu Item - Active (Selected) */
+.sidebar-menu .sidebar-menu-item.active {
   position: relative; 
   font-weight: 700; 
   color: #CED0F8FF;
   background:  #2C35E0FF;
 }
 
-/* Sidebar Menu Item - Selected Hover/Active */
-.sidebar-menu .sidebar-menu-item.selected:hover:active {
+/* Sidebar Menu Item - Active Hover */
+.sidebar-menu .sidebar-menu-item.active:hover {
   color: #2C35E0FF;
   background: #CED0F8FF;
 }

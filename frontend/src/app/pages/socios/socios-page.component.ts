@@ -4,10 +4,10 @@ import { Footer } from "../../layout/footer/footer.component";
 import { Component } from "@angular/core";
 
 @Component({
-    selector: "inicio-page",
+    selector: "socios-page",
     standalone: true,
     imports: [ Navbar, Sidebar, Footer ],
-    templateUrl: "./home-page.component.html"
+    templateUrl: "./socios-page.component.html"
 })
 
-export class Home { };
+export class Socios { };
