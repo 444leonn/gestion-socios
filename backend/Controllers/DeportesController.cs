@@ -97,16 +97,40 @@ namespace backend.Controllers
         [HttpPut]
         public async Task<IActionResult> UpdateDeporte([FromBody] DeporteDto deporteDto)
         {
+            Deporte? deporte = await _context.Deportes.FindAsync(deporteDto.Id);
+            
             try
             {
-                Deporte? deporte = await _context.Deportes.FindAsync(deporteDto.Id);
-
                 if (deporte == null)
                 {
                     return NotFound();
                 }
 
                 deporte.Nombre = deporteDto.Nombre;
+
+                await _context.SaveChangesAsync();
+
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteDeporte([FromBody] DeporteDto.DeleteDeporteDto deporteDto)
+        {
+            Deporte? deporte = await _context.Deportes.FindAsync(deporteDto.Id);
+
+            try
+            {
+                if (deporte == null)
+                {
+                    return NotFound();
+                }
+
+                _context.Deportes.Remove(deporte);
 
                 await _context.SaveChangesAsync();
 

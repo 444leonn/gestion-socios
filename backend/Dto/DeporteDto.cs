@@ -6,4 +6,9 @@ public class DeporteDto
 {
     public int Id { get; set; }
     public string Nombre { get; set; } = string.Empty;
+
+    public class DeleteDeporteDto
+    {
+        public int Id { get; set; }
+    }
 }
