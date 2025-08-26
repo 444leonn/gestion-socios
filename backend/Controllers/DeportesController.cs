@@ -119,7 +119,7 @@ namespace backend.Controllers
         }
 
         [HttpDelete]
-        public async Task<IActionResult> DeleteDeporte([FromBody] DeporteDto.DeleteDeporteDto deporteDto)
+        public async Task<IActionResult> DeleteDeporte([FromBody] DeporteDto deporteDto)
         {
             Deporte? deporte = await _context.Deportes.FindAsync(deporteDto.Id);
 
