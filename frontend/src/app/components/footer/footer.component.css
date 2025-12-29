@@ -26,4 +26,5 @@ svg {
 
 .socials a {
     @apply mx-2;
+    @apply hover:scale-110 transition-transform duration-300;
 }

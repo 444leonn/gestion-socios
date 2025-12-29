@@ -35,6 +35,7 @@ nav {
     @apply mx-4 my-2 px-2;
     @apply rounded-2xl;
     @apply hover:shadow-md hover:shadow-gray-300 dark:hover:shadow-gray-800;
+    @apply hover:scale-105 transition-transform duration-300;
     @apply dark:text-gray-200;
 }
 
