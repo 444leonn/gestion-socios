@@ -1,0 +1,15 @@
+@import 'tailwindcss';
+
+.sport-card {
+    @apply relative flex flex-col items-center;
+    @apply w-40 h-35 m-2 p-4;
+    @apply border border-gray-600 rounded-2xl;
+    @apply bg-gray-100 dark:bg-blue-950;
+    @apply hover:scale-95 transition-transform duration-150;
+}
+
+.sport-name {
+    @apply absolute bottom-0;
+    @apply my-4;
+    @apply capitalize;
+}
