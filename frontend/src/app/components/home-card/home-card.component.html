@@ -1,6 +1,6 @@
 <div class="card">
-    <h1>Miembros Totales</h1>
-    <img src="logo.png"/>
+    <h1>{{ cardInfo().name }}</h1>
+    <img [src]="cardInfo().logo" />
 
-    <span>45</span>
+    <span>{{ cardInfo().spec }}</span>
 </div>
