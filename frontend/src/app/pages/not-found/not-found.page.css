@@ -1,0 +1,8 @@
+@import 'tailwindcss';
+
+.not-found {
+    @apply flex flex-row items-center justify-center;
+    @apply text-red-600 dark:text-red-400;
+    @apply text-3xl;
+    @apply h-full;
+}
