@@ -9,7 +9,7 @@ nav {
 
 .logo {
     @apply flex flex-col items-center;
-    @apply mx-4 my-8 mb-12;
+    @apply mx-4 my-2 sm:my-8 sm:mb-12;
     @apply rounded-full;
     @apply hover:scale-110 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-800 transition-transform;
 }
@@ -28,6 +28,10 @@ nav {
 
 .logo:hover img {
     @apply scale-110 rotate-10 transform transition;
+}
+
+.links {
+    @apply scroll-auto;
 }
 
 .item {
