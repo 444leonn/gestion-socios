@@ -2,7 +2,8 @@
 
 nav {
     @apply flex flex-col;
-    @apply h-screen w-30 sm:w-50;
+    @apply w-30 sm:w-50;
+    @apply min-h-full;
     @apply bg-white dark:bg-gray-950;
     @apply border-r border-gray-200 dark:border-gray-800;
 }
