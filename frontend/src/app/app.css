@@ -10,11 +10,11 @@ body {
 /* Contenedor que incluye navbar y contenido principal */
 .app-container {
     @apply flex flex-row;
-    @apply flex-grow;
+    @apply grow;
 }
 
 /* El contenido principal ocupa el espacio restante */
 .main-content {
-    @apply flex-grow;
+    @apply grow;
     @apply overflow-auto;
 }

@@ -41,6 +41,8 @@ label {
 }
 
 input {
+    @apply text-base;
+    @apply w-11/12;
     @apply px-2;
     @apply border border-gray-400 rounded-md;
     @apply focus:outline-none focus:border-blue-500;
@@ -56,13 +58,14 @@ input {
 }
 
 .cancel {
+    @apply text-base;
     @apply text-red-500 dark:text-red-600;
     @apply hover:underline;
 }
 
 .confirm {
     @apply px-1;
-    @apply text-white;
+    @apply text-white text-base;
     @apply bg-green-400 dark:bg-green-200;
     @apply border rounded-md border-green-500 dark:border-green-300;
     @apply hover:scale-105 hover:shadow-xl hover:shadow-green-200 transition-transform duration-200;
