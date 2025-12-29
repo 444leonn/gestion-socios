@@ -1,0 +1,20 @@
+@import 'tailwindcss';
+
+/* Layout principal con flexbox vertical */
+body {
+    @apply m-0 p-0;
+    @apply min-h-screen;
+    @apply flex flex-col;
+}
+
+/* Contenedor que incluye navbar y contenido principal */
+.app-container {
+    @apply flex flex-row;
+    @apply flex-grow;
+}
+
+/* El contenido principal ocupa el espacio restante */
+.main-content {
+    @apply flex-grow;
+    @apply overflow-auto;
+}
