@@ -1,4 +1,4 @@
 export interface Deporte {
-    id: number;
+    id?: number;
     nombre: string;
 }
