@@ -5,6 +5,7 @@ footer {
     @apply w-full h-15 sm:h-20;
     @apply bg-white dark:bg-gray-950;
     @apply border-t border-gray-200 dark:border-gray-800;
+    @apply dark:text-white;
 }
 
 svg {
