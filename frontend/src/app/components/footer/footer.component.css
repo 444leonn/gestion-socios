@@ -1,0 +1,29 @@
+@import 'tailwindcss';
+
+footer {
+    @apply absolute bottom-0;
+    @apply flex flex-row items-center justify-center;
+    @apply w-screen h-20;
+    @apply bg-white dark:bg-gray-950;
+    @apply border-t border-gray-200 dark:border-gray-800;
+}
+
+svg {
+    @apply h-6 w-6 sm:h-8 sm:w-8;
+}
+
+.link {
+    @apply flex flex-row items-center;
+    @apply mx-2 sm:mx-20;
+    @apply hover:underline;
+}
+
+.socials {
+    @apply sm:absolute sm:right-0;
+    @apply flex flex-row;
+    @apply mx-4 sm:mx-10;
+}
+
+.socials a {
+    @apply mx-2;
+}
