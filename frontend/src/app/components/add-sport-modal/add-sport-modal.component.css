@@ -1,0 +1,68 @@
+@import 'tailwindcss';
+
+.modal-bg {
+    @apply flex flex-row items-center justify-center;
+    @apply fixed top-0 left-0;
+    @apply h-screen w-screen;
+    @apply bg-neutral-300/50;
+}
+
+section {
+    @apply relative items-center justify-center;
+    @apply h-40 w-150 m-6;
+    @apply bg-gray-100;
+    @apply rounded-2xl;
+}
+
+h1 {
+    @apply sm:absolute top-0 left-0;
+    @apply m-6;
+    @apply text-lg sm:text-2xl font-semibold;
+}
+
+form {
+    @apply absolute bottom-0 left-0 flex;
+    @apply w-full;
+    @apply sm:m-2;
+}
+
+.form-container {
+    @apply relative w-full;
+}
+
+.form-field {
+    @apply sm:absolute bottom-0 flex flex-col;
+    @apply mx-6 sm:mx-8 my-2;
+}
+
+label {
+    @apply my-1 sm:mx-0.5;
+    @apply text-xs sm:text-lg;
+}
+
+input {
+    @apply px-2;
+    @apply border rounded-md;
+}
+
+.buttons {
+    @apply sm:absolute bottom-0 right-0;
+    @apply w-fit mx-4;
+}
+
+.buttons button {
+    @apply m-2;
+}
+
+.cancel {
+    @apply text-red-500 dark:text-red-600;
+    @apply hover:underline;
+}
+
+.confirm {
+    @apply px-1;
+    @apply text-white;
+    @apply bg-green-400 dark:bg-green-200;
+    @apply border rounded-md border-green-500 dark:border-green-300;
+    @apply hover:scale-105 hover:shadow-xl hover:shadow-green-200 transition-transform duration-200;
+}
