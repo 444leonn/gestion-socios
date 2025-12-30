@@ -1,0 +1,17 @@
+<div class="modal-bg">
+    <section>
+        <div class="main">
+            <h1>Iconos Disponibles</h1>
+            <button (click)="handleClick()">
+                <svg class="icon">
+                    <use href="sprites.svg#icon-close"></use>
+                </svg>
+            </button>
+        </div>
+        <div class="icons">
+            @for (icon of iconNames; track icon) {
+                <app-icons-card [cardName]="icon" />
+            }
+        </div>
+    </section>
+</div>

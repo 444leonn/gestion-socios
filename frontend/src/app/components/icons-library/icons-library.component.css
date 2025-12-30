@@ -1,0 +1,49 @@
+@import 'tailwindcss';
+
+.modal-bg {
+    @apply flex flex-row items-center justify-center;
+    @apply fixed top-0 left-0;
+    @apply h-screen w-screen;
+    @apply bg-neutral-300/50 dark:bg-neutral-950/50;
+    @apply z-50;
+}
+
+section {
+    @apply flex flex-col items-center justify-center;
+    @apply w-200 h-100;
+    @apply bg-gray-100 dark:bg-gray-700;
+    @apply rounded-2xl;
+    @apply overflow-hidden;
+}
+
+.main {
+    @apply flex flex-row items-center justify-between;
+    @apply w-full;
+}
+
+h1 {
+    @apply shrink-0;
+    @apply m-6;
+    @apply text-lg sm:text-2xl font-semibold;
+    @apply dark:text-gray-200;
+}
+
+button {
+    @apply flex flex-row items-center justify-center;
+    @apply w-8 h-8 m-6;
+    @apply border border-red-500 dark:border-red-600 rounded-lg;
+    @apply hover:cursor-pointer hover:scale-105 transition-transform duration-200;
+    @apply bg-red-400 dark:bg-red-600;
+}
+
+button svg {
+    @apply w-6 h-6;
+    @apply text-white;
+}
+
+.icons {
+    @apply grid grid-cols-4 gap-4;
+    @apply overflow-y-auto;
+    @apply px-6 pb-6;
+    @apply flex-1;
+}
