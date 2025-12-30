@@ -2,14 +2,28 @@
 
 .sport-card {
     @apply relative flex flex-col items-center;
-    @apply w-40 h-35 m-2 p-4;
+    @apply w-30 h-25 sm:w-35 sm:h-30 m-2;
     @apply border border-gray-600 rounded-2xl;
     @apply bg-gray-100 dark:bg-blue-950;
+}
+
+.info {
+    @apply flex flex-row items-center;
+    @apply absolute bottom-0;
+    @apply my-2 mr-4;
+    @apply capitalize;
+    @apply dark:text-gray-100;
+}
+
+button {
+    @apply absolute bottom-0 right-0;
+    @apply flex flex-row items-center justify-center;
+    @apply h-6 w-6 sm:h-9 sm:w-9 m-2;
+    @apply border border-red-700 bg-red-600 dark:bg-red-700 rounded-md;
+    @apply bg-red-500 dark:bg-red-600;
     @apply hover:scale-95 transition-transform duration-150;
 }
 
-.sport-name {
-    @apply absolute bottom-0;
-    @apply my-4;
-    @apply capitalize;
+svg {
+    @apply w-5 h-5;
 }
