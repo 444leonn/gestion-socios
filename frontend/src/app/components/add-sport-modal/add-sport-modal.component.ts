@@ -3,15 +3,18 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Deporte } from '../../models/deporte';
 import { environment } from '../../../environments/environments';
+import { AddButtonComponent } from "../add-button/add-button.component";
+import { IconsLibraryComponent } from "../icons-library/icons-library.component";
 
 @Component({
   selector: 'app-add-sport-modal',
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, AddButtonComponent, IconsLibraryComponent],
   templateUrl: './add-sport-modal.component.html',
   styleUrl: './add-sport-modal.component.css',
 })
 export class AddSportModalComponent {
   private apiUrl = `${environment.apiUrl}/deportes`;
+  mostrar = signal(false);
   loading = signal(false);
   error = signal<string | null>(null);
   

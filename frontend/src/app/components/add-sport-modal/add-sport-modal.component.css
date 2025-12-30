@@ -31,6 +31,10 @@ form {
     @apply mx-6 sm:mx-8 my-2;
 }
 
+.icon-field {
+    @apply flex flex-row items-center justify-center;
+}
+
 label {
     @apply my-1 sm:mx-0.5;
     @apply text-xs sm:text-lg;
