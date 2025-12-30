@@ -4,7 +4,8 @@
     @apply flex flex-row items-center justify-center;
     @apply fixed top-0 left-0;
     @apply h-screen w-screen;
-    @apply bg-neutral-300/50 bg-neutral-950/50;
+    @apply bg-neutral-300/50 dark:bg-neutral-950/50;
+    @apply z-50;
 }
 
 section {
