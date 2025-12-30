@@ -1,0 +1,13 @@
+@import 'tailwindcss';
+
+.title {
+    @apply flex flex-row items-center;
+    @apply mx-4 sm:mx-15 my-10;
+    @apply text-xl sm:text-3xl font-extrabold font-sans;
+    @apply dark:text-gray-200;
+}
+
+.deportes {
+    @apply place-items-center;
+    @apply grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5;
+}

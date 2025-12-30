@@ -1,0 +1,22 @@
+<div class="title">
+   <h1>Deportes</h1>
+   <app-add-button (toggle)="mostrar.set(!mostrar())" />
+   @if (mostrar()) {
+      <app-add-sport-modal 
+      (closeModal)="mostrar.set(false)"
+      (sportCreated)="Deportes.reload()"
+      />
+   }
+</div>
+
+<section class="deportes">
+   @if (Deportes.isLoading()) {
+      <p>Cargando deportes...</p>
+   } @else if (Deportes.error()) {
+      <p>Error al cargar deportes: {{ Deportes.error() }}</p>
+   } @else if (Deportes.value()) {
+      @for (deporte of Deportes.value(); track deporte.id) {
+         <app-sport-card [deporte]="deporte" (onDeleted)="Deportes.reload()"/>
+      }
+   }
+</section>
