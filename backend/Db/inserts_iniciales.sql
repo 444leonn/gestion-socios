@@ -10,12 +10,12 @@ VALUES
     ('Infantil', NULL, 2500, 0, 5);
 
 -- Insertar algunos deportes
-INSERT INTO Deportes (Nombre) VALUES
-    ('Fútbol'),
-    ('Natación'),
-    ('Tenis'),
-    ('Básquet'),
-    ('Padel');
+INSERT INTO Deportes (Nombre, Imagen) VALUES
+    ('Fútbol', 'sports_soccer'),
+    ('Natación', 'pool'),
+    ('Tenis', 'sports_tennis'),
+    ('Básquet', 'sports_basketball'),
+    ('Padel', 'sports_tennis');
 
 -- Insertar socios (usuarios titulares y no titulares)
 INSERT INTO Socios (Nombre, Apellido, FechaNacimiento, Dni, Password, TitularId, TipoSocioId, Telefono, Mail, Calle, Altura, Cp, Localidad)
