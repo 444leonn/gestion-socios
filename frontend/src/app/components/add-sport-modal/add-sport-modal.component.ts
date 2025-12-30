@@ -37,7 +37,8 @@ export class AddSportModalComponent {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          nombre: this.deporte.nombre
+          nombre: this.deporte.nombre,
+          imagen: this.deporte.imagen,
         })
       });
 
