@@ -1,0 +1,10 @@
+@import 'tailwindcss';
+
+.icon-card {
+    @apply flex flex-col items-center justify-center;
+    @apply w-15 h-15 m-1;
+    @apply border border-gray-300 rounded-xl;
+    @apply bg-gray-200;
+    @apply hover:scale-101 transition-transform duration-75;
+    @apply text-base;
+}
