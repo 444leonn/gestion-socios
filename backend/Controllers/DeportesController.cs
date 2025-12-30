@@ -122,10 +122,10 @@ namespace backend.Controllers
             }
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> DeleteDeporte([FromBody] DeporteDto deporteDto)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteDeporte(int id)
         {
-            Deporte? deporte = await _context.Deportes.FindAsync(deporteDto.Id);
+            Deporte? deporte = await _context.Deportes.FindAsync(id);
 
             try
             {
@@ -134,8 +134,9 @@ namespace backend.Controllers
                     return NotFound();
                 }
 
+                var relaciones = _context.DeportesSocios.Where(ds => ds.Deporte.Id == id);                _context.DeportesSocios.RemoveRange(relaciones);
                 _context.Deportes.Remove(deporte);
-
+                
                 await _context.SaveChangesAsync();
 
                 return NoContent();
