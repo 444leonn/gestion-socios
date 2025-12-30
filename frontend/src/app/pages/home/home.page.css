@@ -1,0 +1,14 @@
+@import 'tailwindcss';
+
+.home-container {
+    @apply p-6;
+}
+
+h1 {
+    @apply text-3xl font-bold mb-4;
+    @apply dark:text-gray-200;
+}
+
+p {
+    @apply dark:text-gray-300;
+}
