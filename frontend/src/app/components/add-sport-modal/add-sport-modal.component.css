@@ -9,31 +9,25 @@
 }
 
 section {
-    @apply relative items-center justify-center;
-    @apply h-40 w-150 m-6;
+    @apply items-center justify-center;
+    @apply w-150 h-60 m-6;
     @apply bg-gray-100 dark:bg-gray-700;
     @apply rounded-2xl;
 }
 
 h1 {
-    @apply sm:absolute top-0 left-0;
     @apply m-6;
     @apply text-lg sm:text-2xl font-semibold;
     @apply dark:text-gray-200;
 }
 
 form {
-    @apply absolute bottom-0 left-0 flex;
-    @apply w-full;
-    @apply sm:m-2;
-}
-
-.form-container {
-    @apply relative w-full;
+    @apply flex;
+    @apply w-full sm:m-2;
 }
 
 .form-field {
-    @apply sm:absolute bottom-0 flex flex-col;
+    @apply flex flex-col;
     @apply mx-6 sm:mx-8 my-2;
 }
 
@@ -51,7 +45,7 @@ input {
 }
 
 .buttons {
-    @apply sm:absolute bottom-0 right-0;
+    @apply flex flex-row items-end justify-end;
     @apply w-fit mx-4;
 }
 

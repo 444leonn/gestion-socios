@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, signal } from '@angular/core';
+import { Component, output, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Deporte } from '../../models/deporte';
@@ -15,8 +15,8 @@ export class AddSportModalComponent {
   loading = signal(false);
   error = signal<string | null>(null);
   
-  @Output() closeModal = new EventEmitter<void>();
-  @Output() sportCreated = new EventEmitter<void>();
+  closeModal = output<void>();
+  sportCreated = output<void>();
   
   deporte: Deporte = {
     nombre: '',
@@ -60,8 +60,6 @@ export class AddSportModalComponent {
     if (form.valid) {
       await this.create();
     }
-
-
   }
 }
 
