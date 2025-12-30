@@ -16,6 +16,7 @@ export class AddSportModalComponent {
   error = signal<string | null>(null);
   
   @Output() closeModal = new EventEmitter<void>();
+  @Output() sportCreated = new EventEmitter<void>();
   
   deporte: Deporte = {
     nombre: '',
@@ -46,6 +47,7 @@ export class AddSportModalComponent {
         throw new Error(`Error: ${response.status}`);
       }
 
+      this.sportCreated.emit();
       this.closeModal.emit();
     } catch (err) {
       this.error.set(err instanceof Error ? err.message : 'Error al crear');
@@ -58,6 +60,8 @@ export class AddSportModalComponent {
     if (form.valid) {
       await this.create();
     }
+
+
   }
 }
 
