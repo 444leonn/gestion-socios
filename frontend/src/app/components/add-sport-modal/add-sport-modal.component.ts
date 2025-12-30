@@ -18,7 +18,8 @@ export class AddSportModalComponent {
   @Output() closeModal = new EventEmitter<void>();
   
   deporte: Deporte = {
-    nombre: ''
+    nombre: '',
+    imagen: ''
   };
   
   onCancel() {

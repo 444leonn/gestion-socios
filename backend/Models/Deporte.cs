@@ -8,5 +8,7 @@ public class Deporte
 
     public string Nombre { get; set; } = string.Empty;
 
+    public string Imagen { get; set; } = string.Empty;
+
     public ICollection<DeporteSocio> DeportesSocios { get; set; } = new List<DeporteSocio>();
 }

@@ -33,7 +33,8 @@ namespace backend.Controllers
                 var deporteDtos = deportes.Select(d => new DeporteDto
                 {
                     Id = d.Id,
-                    Nombre = d.Nombre
+                    Nombre = d.Nombre,
+                    Imagen = d.Imagen
                 });
 
                 return Ok(deporteDtos);
@@ -60,7 +61,8 @@ namespace backend.Controllers
                     DeporteDto deporteDto = new DeporteDto
                     {
                         Id = deporte.Id,
-                        Nombre = deporte.Nombre
+                        Nombre = deporte.Nombre,
+                        Imagen = deporte.Imagen,
                     };
 
                     return Ok(deporteDto);
@@ -77,7 +79,8 @@ namespace backend.Controllers
         {
             Deporte deporte = new Deporte
             {
-                Nombre = deporteDto.Nombre
+                Nombre = deporteDto.Nombre,
+                Imagen = deporteDto.Imagen
             };
 
             try
@@ -107,6 +110,7 @@ namespace backend.Controllers
                 }
 
                 deporte.Nombre = deporteDto.Nombre;
+                deporte.Imagen = deporteDto.Imagen;
 
                 await _context.SaveChangesAsync();
 

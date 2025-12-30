@@ -61,6 +61,7 @@ Almacenamos los distintos deportes que los distintos socios pueden realizar
 CREATE TABLE [Deportes] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Nombre] varchar(max) NOT NULL,
+    [Imagen] varchar(max) NOT NULL
     PRIMARY KEY ([Id])
 );
 
