@@ -30,6 +30,6 @@ button {
     @apply hover:scale-95 transition-transform duration-150;
 }
 
-svg {
-    @apply w-5 h-5;
+button span {
+    @apply text-xl sm:text-2xl;
 }
