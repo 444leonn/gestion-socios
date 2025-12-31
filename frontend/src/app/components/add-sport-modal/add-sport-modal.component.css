@@ -55,6 +55,7 @@ input {
 
 .buttons button {
     @apply m-2;
+    @apply hover:cursor-pointer;
 }
 
 .cancel {

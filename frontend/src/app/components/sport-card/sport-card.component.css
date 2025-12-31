@@ -13,6 +13,10 @@
     @apply text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl;
 }
 
+.sport-card:hover .icon {
+    @apply rotate-15 transform transition duration-300;
+}
+
 .info {
     @apply flex flex-row items-center;
     @apply sm:mt-4;
@@ -27,7 +31,7 @@ button {
     @apply h-6 w-6 md:h-8 md:w-8 m-2;
     @apply border border-red-700 bg-red-600 dark:bg-red-700 rounded-md;
     @apply bg-red-500 dark:bg-red-600;
-    @apply hover:scale-95 transition-transform duration-150;
+    @apply hover:cursor-pointer hover:scale-95 transition-transform duration-150;
 }
 
 button span {

@@ -5,7 +5,8 @@ button {
     @apply w-8 h-8 sm:w-10 sm:h-10 m-2;
     @apply bg-green-400;
     @apply border rounded-lg sm:rounded-xl border-green-500;
-    @apply hover:scale-105 hover:shadow-md hover:shadow-green-600 transition-transform duration-200;
+    @apply hover:scale-105 hover:shadow-md hover:shadow-green-600 hover:cursor-pointer;
+    @apply transition-transform duration-200;
 }
 
 svg {
