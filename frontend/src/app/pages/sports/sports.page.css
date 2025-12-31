@@ -8,10 +8,11 @@
 }
 
 .deportes {
-    @apply w-full;
+    @apply overflow-y-auto w-full;
     @apply place-items-center;
     @apply grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5;
     @apply dark:text-gray-200;
+    @apply h-[calc(100vh-200px)] max-h-screen;
 }
 
 .deportes p {

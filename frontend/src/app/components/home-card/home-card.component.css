@@ -2,9 +2,9 @@
 
 .card {
     @apply relative;
-    @apply w-30 h-25 sm:w-75 sm:h-37 lg:w-100 lg:h-50;
+    @apply w-30 h-25 sm:w-40 sm:h-25 md:w-50 md:h-35 lg:w-70 lg:h-40;
     @apply rounded-2xl;
-    @apply hover:shadow-gray-100 hover:shadow-md hover:scale-105 transition-transform duration-250;
+    @apply hover:shadow-gray-100 dark:hover:shadow-gray-600 hover:shadow-md hover:scale-105 transition-transform duration-250;
     background: var(--card-color);
 }
 
@@ -23,6 +23,6 @@ h1 {
 
 .spec {
     @apply absolute bottom-0 left-0;
-    @apply m-8 my-5 lg:m-10 lg:my-20;
+    @apply m-8 my-5;
     @apply text-2xl md:text-3xl lg:text-4xl font-medium;
 }

@@ -1,14 +1,19 @@
 @import 'tailwindcss';
 
-.home-container {
-    @apply p-6;
-}
-
-h1 {
-    @apply text-3xl font-bold mb-4;
+.title {
+    @apply items-center;
+    @apply mx-4 sm:mx-15 my-12;
+    @apply text-xl sm:text-3xl font-extrabold font-sans;
     @apply dark:text-gray-200;
 }
 
 p {
     @apply dark:text-gray-300;
+}
+
+.cards {
+    @apply grid grid-cols-2 md:grid-cols-3;
+    @apply gap-y-10;
+    @apply xl:m-25;
+    @apply items-center;
 }
