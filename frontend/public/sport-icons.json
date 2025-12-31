@@ -1,8 +1,17 @@
 {
     "icons": [
+        "badminton",
+        "sprint",
         "directions_run",
+        "directions_bike",
+        "exercise",
+        "fitness_center",
+        "golf_course",
+        "padel",
+        "counter_8",
         "hiking",
         "kayaking",
+        "kitesurfing",
         "pool",
         "sports",
         "sports_and_outdoors",
@@ -28,8 +37,14 @@
         "scuba_diving",
         "skateboarding",
         "sledding",
+        "surfing",
         "snowboarding",
         "snowshoeing",
-        "roller_skating"
+        "roller_skating",
+        "ice_skating",
+        "rowing",
+        "sailing",
+        "sledding",
+        "nordic_walking"
     ]
 }
