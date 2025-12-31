@@ -3,12 +3,12 @@
 .icon-card {
     @apply flex flex-col items-center justify-center;
     @apply h-25 min-w-fit m-1 p-2;
-    @apply border border-gray-300 rounded-xl;
-    @apply bg-gray-200;
+    @apply border border-gray-300 dark:border-indigo-950 rounded-xl;
+    @apply bg-gray-200 dark:bg-blue-950;
     @apply hover:scale-101 transition-transform duration-75;
-    @apply text-base;
+    @apply text-base dark:text-gray-300;
 }
 
 .material-symbols-outlined {
-    @apply text-4xl;
+    @apply text-4xl dark:text-gray-300;
 }
