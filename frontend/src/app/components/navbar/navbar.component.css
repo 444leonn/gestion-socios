@@ -21,13 +21,13 @@ nav {
     @apply dark:text-gray-300;
 }
 
-.logo img {
+.logo svg {
     @apply object-cover;
     @apply h-20 w-20 sm:h-15 sm:w-15;
     @apply transition-transform duration-300;
 }
 
-.logo:hover img {
+.logo:hover svg {
     @apply scale-110 rotate-10 transform transition;
 }
 
