@@ -13,7 +13,7 @@
    @if (Deportes.isLoading()) {
       <p>Cargando deportes...</p>
    } @else if (Deportes.error()) {
-      <p>Error al cargar deportes: {{ Deportes.error() }}</p>
+      <p class="text-red-400 dark:text-red-600">Error al cargar deportes: {{ Deportes.error() }}</p>
    } @else if (Deportes.value()) {
       @for (deporte of Deportes.value(); track deporte.id) {
          <app-sport-card [deporte]="deporte" (onDeleted)="Deportes.reload()"/>

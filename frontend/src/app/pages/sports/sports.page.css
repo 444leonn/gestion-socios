@@ -8,6 +8,14 @@
 }
 
 .deportes {
+    @apply w-full;
     @apply place-items-center;
     @apply grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5;
+    @apply dark:text-gray-200;
+}
+
+.deportes p {
+    @apply w-full items-center justify-center;
+    @apply text-center;
+    @apply col-span-2 sm:col-span-3 lg:col-span-6;
 }
