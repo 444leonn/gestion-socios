@@ -14,7 +14,7 @@ body {
 }
 
 /* El contenido principal ocupa el espacio restante */
-.main-content {
+main {
     @apply grow;
     @apply overflow-auto;
 }

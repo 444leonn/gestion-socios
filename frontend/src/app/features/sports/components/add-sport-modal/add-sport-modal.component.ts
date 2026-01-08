@@ -1,10 +1,10 @@
 import { Component, output, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Deporte } from '../../models/deporte';
-import { environment } from '../../../environments/environments';
-import { AddButtonComponent } from "../add-button/add-button.component";
-import { IconsLibraryComponent } from "../icons-library/icons-library.component";
+import { Deporte } from "../../../../core/models/deporte";
+import { environment } from "../../../../../environments/environments";
+import { AddButtonComponent } from "../../../../shared/components/add-button/add-button.component";
+import { IconsLibraryComponent } from "../../../icons/components/icons-library/icons-library.component";
 
 @Component({
   selector: 'app-add-sport-modal',

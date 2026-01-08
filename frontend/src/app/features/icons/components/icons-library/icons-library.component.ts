@@ -1,6 +1,6 @@
 import { Component, input, output } from '@angular/core';
 import { IconsCardComponent } from "../icons-card/icons-card.component";
-import sportIcons from '../../../../public/sport-icons.json';
+import sportIcons from '../../../../../../public/sport-icons.json';
 
 @Component({
   selector: 'app-icons-library',

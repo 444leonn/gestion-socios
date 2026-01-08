@@ -17,12 +17,13 @@
     @apply rotate-15 transform transition duration-300;
 }
 
-.info {
-    @apply flex flex-row items-center;
+h1 {
+    @apply w-full text-center;
     @apply sm:mt-4;
     @apply capitalize;
     @apply text-base lg:text-lg xl:text-xl;
     @apply dark:text-gray-100;
+    @apply overflow-hidden text-ellipsis;
 }
 
 button {

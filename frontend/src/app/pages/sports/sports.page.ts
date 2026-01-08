@@ -1,8 +1,8 @@
 import { Component, resource, signal } from '@angular/core';
-import { AddButtonComponent } from '../../components/add-button/add-button.component';
-import { AddSportModalComponent } from '../../components/add-sport-modal/add-sport-modal.component';
-import { SportCardComponent } from "../../components/sport-card/sport-card.component";
-import { Deporte } from '../../models/deporte';
+  import { AddButtonComponent } from "../../shared/components/add-button/add-button.component";
+import { AddSportModalComponent } from "../../features/sports/components/add-sport-modal/add-sport-modal.component";
+import { SportCardComponent } from "../../features/sports/components/sport-card/sport-card.component";
+import { Deporte } from "../../core/models/deporte";
 import { environment } from '../../../environments/environments';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, input, output } from '@angular/core';
-import { Deporte } from '../../models/deporte';
-import { environment } from '../../../environments/environments';
+import { Deporte } from "../../../../core/models/deporte";
+import { environment } from "../../../../../environments/environments";
 
 @Component({
   selector: 'app-sport-card',

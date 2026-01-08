@@ -1,10 +1,8 @@
-import { Component } from '@angular/core';
-import { FooterComponent } from "../../components/footer/footer.component";
-import { NavbarComponent } from "../../components/navbar/navbar.component";
+import { Component } from '@angular/core';;
 
 @Component({
   selector: 'app-not-found',
-  imports: [FooterComponent, NavbarComponent],
+  imports: [],
   templateUrl: './not-found.page.html',
   styleUrl: './not-found.page.css',
 })

@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { IconsLibraryComponent } from "../../components/icons-library/icons-library.component";
-import { HomeCardComponent } from "../../components/home-card/home-card.component";
+import { HomeCardComponent } from "../../features/home/components/home-card/home-card.component";
 
 @Component({
   selector: 'app-home',
-  imports: [IconsLibraryComponent, HomeCardComponent],
+  imports: [HomeCardComponent],
   templateUrl: './home.page.html',
   styleUrl: './home.page.css',
 })
