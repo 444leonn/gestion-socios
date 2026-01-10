@@ -14,6 +14,6 @@ export interface Socio {
     titularId?: number;
     titularNombre?: string;
     tipoSocioId: number;
-    tipoSocioNombre: string;
+    tipoSocioNombre?: string;
     adherentesIds: number[];
 }
