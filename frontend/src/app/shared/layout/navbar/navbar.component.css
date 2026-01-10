@@ -39,7 +39,7 @@ nav {
     @apply flex flex-row items-center;
     @apply m-4;
     @apply rounded-2xl;
-    @apply hover:shadow-md hover:shadow-gray-300 dark:hover:shadow-gray-800;
+    @apply hover:shadow-md hover:shadow-gray-300 dark:hover:shadow-gray-900;
     @apply hover:scale-105 transition-transform duration-300;
     @apply dark:text-gray-200;
 }
