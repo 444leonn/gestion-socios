@@ -10,7 +10,7 @@ public class TipoSocio
 
     public string? Genero { get; set; }
 
-    public decimal Cuota { get; set; }
+    public double Cuota { get; set; }
 
     public int? EdadDesde { get; set; }
 

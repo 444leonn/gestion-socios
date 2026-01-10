@@ -15,7 +15,7 @@ CREATE TABLE [Socios] (
     [Nombre] varchar(max) NOT NULL,
     [Apellido] varchar(max) NOT NULL,
     [FechaNacimiento] date NOT NULL,
-    [FechaAlt] datetime DEFAULT GETDATE(),
+    [FechaAlta] datetime DEFAULT GETDATE(),
     [Dni] int NOT NULL UNIQUE,
     [Password] varchar(max),
     [TitularId] int,
