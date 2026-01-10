@@ -1,10 +1,10 @@
-import { Component, output, signal } from '@angular/core';
+import { Component, output, signal, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Deporte } from "../../../../core/models/deporte";
-import { environment } from "../../../../../environments/environments";
 import { AddButtonComponent } from "../../../../shared/components/add-button/add-button.component";
 import { IconsLibraryComponent } from "../../../icons/components/icons-library/icons-library.component";
+import { SportsService } from "../../../../core/services/sports.service";
 
 @Component({
   selector: 'app-add-sport-modal',
@@ -13,7 +13,8 @@ import { IconsLibraryComponent } from "../../../icons/components/icons-library/i
   styleUrl: './add-sport-modal.component.css',
 })
 export class AddSportModalComponent {
-  private apiUrl = `${environment.apiUrl}/deportes`;
+  private sportsService = inject(SportsService);
+  
   mostrar = signal(false);
   loading = signal(false);
   error = signal<string | null>(null);
@@ -35,20 +36,10 @@ export class AddSportModalComponent {
     this.error.set(null);
 
     try {
-      const response = await fetch(this.apiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          nombre: this.deporte.nombre,
-          imagen: this.deporte.imagen,
-        })
+      await this.sportsService.create({
+        nombre: this.deporte.nombre,
+        imagen: this.deporte.imagen,
       });
-
-      if (!response.ok) {
-        throw new Error(`Error: ${response.status}`);
-      }
 
       this.sportCreated.emit();
       this.closeModal.emit();
