@@ -190,35 +190,54 @@ namespace backend.Controllers
                 if (socio == null)
                     return NotFound();
 
-                var tipoSocio = await _context.TiposSocios.FindAsync(socioDto.TipoSocioId);
-                if (tipoSocio == null)
+                if (!string.IsNullOrWhiteSpace(socioDto.Nombre))
+                    socio.Nombre = socioDto.Nombre;
+                    
+                if (!string.IsNullOrWhiteSpace(socioDto.Apellido))
+                    socio.Apellido = socioDto.Apellido;
+                    
+                if (socioDto.FechaNacimiento != default)
+                    socio.FechaNacimiento = socioDto.FechaNacimiento;
+                    
+                if (socioDto.FechaAlta != default)
+                    socio.FechaAlta = socioDto.FechaAlta;
+                    
+                if (socioDto.Dni > 0)
+                    socio.Dni = socioDto.Dni;
+                    
+                if (!string.IsNullOrWhiteSpace(socioDto.Telefono))
+                    socio.Telefono = socioDto.Telefono;
+                    
+                if (!string.IsNullOrWhiteSpace(socioDto.Mail))
+                    socio.Mail = socioDto.Mail;
+                    
+                if (!string.IsNullOrWhiteSpace(socioDto.Calle))
+                    socio.Calle = socioDto.Calle;
+                    
+                if (socioDto.Altura > 0)
+                    socio.Altura = socioDto.Altura;
+                    
+                if (socioDto.Cp > 0)
+                    socio.Cp = socioDto.Cp;
+                    
+                if (!string.IsNullOrWhiteSpace(socioDto.Localidad))
+                    socio.Localidad = socioDto.Localidad;
+
+                if (socioDto.TipoSocioId > 0)
                 {
-                    return BadRequest("El tipo de socio especificado no existe.");
+                    var tipoSocio = await _context.TiposSocios.FindAsync(socioDto.TipoSocioId);
+                    if (tipoSocio == null)
+                        return BadRequest("El tipo de socio especificado no existe.");
+                    socio.TipoSocio = tipoSocio;
                 }
 
-                Socio? titular = null;
                 if (socioDto.TitularId.HasValue)
                 {
-                    titular = await _context.Socios.FindAsync(socioDto.TitularId.Value);
+                    var titular = await _context.Socios.FindAsync(socioDto.TitularId.Value);
                     if (titular == null)
-                    {
                         return BadRequest("El titular especificado no existe.");
-                    }
+                    socio.Titular = titular;
                 }
-
-                socio.Nombre = socioDto.Nombre;
-                socio.Apellido = socioDto.Apellido;
-                socio.FechaNacimiento = socioDto.FechaNacimiento;
-                socio.FechaAlta = socioDto.FechaAlta;
-                socio.Dni = socioDto.Dni;
-                socio.Telefono = socioDto.Telefono;
-                socio.Mail = socioDto.Mail;
-                socio.Calle = socioDto.Calle;
-                socio.Altura = socioDto.Altura;
-                socio.Cp = socioDto.Cp;
-                socio.Localidad = socioDto.Localidad;
-                socio.TipoSocio = tipoSocio;
-                socio.Titular = titular;
 
                 await _context.SaveChangesAsync();
 
