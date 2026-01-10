@@ -114,7 +114,7 @@ namespace backend.Controllers
 
                 await _context.SaveChangesAsync();
 
-                return NoContent();
+                return Ok();
             }
             catch (Exception ex)
             {
@@ -134,7 +134,8 @@ namespace backend.Controllers
                     return NotFound();
                 }
 
-                var relaciones = _context.DeportesSocios.Where(ds => ds.Deporte.Id == id);                _context.DeportesSocios.RemoveRange(relaciones);
+                var relaciones = _context.DeportesSocios.Where(ds => ds.Deporte.Id == id);
+                _context.DeportesSocios.RemoveRange(relaciones);
                 _context.Deportes.Remove(deporte);
                 
                 await _context.SaveChangesAsync();
