@@ -2,7 +2,7 @@
 
 .title {
     @apply items-center;
-    @apply mx-4 sm:mx-15 my-12;
+    @apply mx-4 sm:mx-15 mt-12 mb-6;
     @apply text-xl sm:text-3xl font-extrabold font-sans;
     @apply dark:text-gray-200;
 }
@@ -13,7 +13,6 @@ p {
 
 .cards {
     @apply grid grid-cols-2 md:grid-cols-3;
-    @apply gap-y-10;
-    @apply xl:m-25;
+    @apply xl:mx-10;
     @apply items-center;
 }
