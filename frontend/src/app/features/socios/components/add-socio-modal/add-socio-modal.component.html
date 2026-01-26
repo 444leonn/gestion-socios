@@ -1,0 +1,16 @@
+<div class="modal-bg">
+    <section>
+        <h1>Agregar Socio</h1>
+
+        <form #socioModal="ngForm" (ngSubmit)="onSubmit(socioModal)">
+            <div class="form-field">
+                <label>Nombre</label>
+                <input type="text" label="nombre" placeholder="Socio" name="nombre" [(ngModel)]="socio.nombre" required />
+            </div>
+            <div class="buttons">
+                <button class="cancel" type="button" (click)="onCancel()">Cancelar</button>
+                <button class="confirm" type="submit">Confirmar</button>
+            </div>          
+        </form>
+    </section>
+</div>
