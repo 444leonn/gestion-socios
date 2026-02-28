@@ -1,0 +1,73 @@
+@import 'tailwindcss';
+
+.modal-bg {
+    @apply flex flex-row items-center justify-center;
+    @apply fixed top-0 left-0;
+    @apply h-screen w-screen;
+    @apply bg-neutral-300/50 dark:bg-neutral-950/50;
+    @apply z-50;
+}
+
+section {
+    @apply items-center justify-center;
+    @apply w-150 h-60 m-6;
+    @apply bg-gray-100 dark:bg-gray-700;
+    @apply rounded-2xl;
+}
+
+h1 {
+    @apply m-6;
+    @apply text-lg sm:text-2xl font-semibold;
+    @apply dark:text-gray-200;
+}
+
+form {
+    @apply flex;
+    @apply w-full sm:m-2;
+}
+
+.form-field {
+    @apply flex flex-col;
+    @apply mx-6 sm:mx-8 my-2;
+}
+
+.icon-field {
+    @apply flex flex-row items-center justify-center;
+}
+
+label {
+    @apply my-1 sm:mx-0.5;
+    @apply text-xs sm:text-lg;
+    @apply dark:text-gray-300;
+}
+
+input {
+    @apply text-base;
+    @apply w-11/12 my-0.5 px-2;
+    @apply border border-gray-400 rounded-md;
+    @apply focus:outline-none focus:border-blue-500;
+}
+
+.buttons {
+    @apply flex flex-row items-end justify-end;
+    @apply w-fit mx-4;
+}
+
+.buttons button {
+    @apply m-2;
+    @apply hover:cursor-pointer;
+}
+
+.cancel {
+    @apply text-base;
+    @apply text-red-500 dark:text-red-600;
+    @apply hover:underline;
+}
+
+.confirm {
+    @apply px-1;
+    @apply text-white text-base;
+    @apply bg-green-400;
+    @apply border rounded-md border-green-500;
+    @apply hover:scale-105 hover:shadow-md hover:shadow-green-200 dark:hover:shadow-green-600 transition-transform duration-200;
+}

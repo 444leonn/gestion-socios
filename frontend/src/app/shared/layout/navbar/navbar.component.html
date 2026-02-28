@@ -1,0 +1,35 @@
+<nav>
+    <a class="logo" href="#">
+        <svg class="logo-icon dark:text-gray-300">
+            <use href="sprites.svg#icon-logo"></use>
+        </svg>
+        <span>Dashboard</span>
+    </a>
+
+    <div class="links">
+        <a class="item" [routerLink]="['/']">
+            <span class="material-symbols-outlined">home</span> 
+            <span class="item-name" >Inicio</span>
+        </a>
+
+        <a class="item" [routerLink]="['/socios']">
+            <span class="material-symbols-outlined">card_membership</span>
+            <span class="item-name" >Socios</span>
+        </a>
+
+        <a class="item" href="#grupos">
+            <span class="material-symbols-outlined">people</span>
+            <span class="item-name" >Grupos</span>
+        </a>
+
+        <a class="item" [routerLink]="['/deportes']">
+            <span class="material-symbols-outlined">sports_and_outdoors</span>
+            <span class="item-name" >Deportes</span>
+        </a>
+
+        <a class="item" href="#cuotas">
+            <span class="material-symbols-outlined">universal_currency</span>
+            <span class="item-name" >Tipos y Cuotas</span>
+        </a>
+    </div>
+</nav>

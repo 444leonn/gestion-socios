@@ -1,0 +1,23 @@
+<div class="modal-bg">
+    <section>
+        <h1>Crear Deporte</h1>
+
+        <form #sportModal="ngForm" (ngSubmit)="onSubmit(sportModal)">
+            <div class="form-field">
+                <label>Nombre</label>
+                <input type="text" label="nombre" placeholder="Deporte" name="nombre" [(ngModel)]="deporte.nombre" required />
+                <div class="icon-field">
+                    <input type="text" label="imagen" placeholder="Imagen" name="imagen" [(ngModel)]="deporte.imagen" required />
+                    <app-add-button (toggle)="mostrar.set(!mostrar())" />
+                    @if (mostrar()) {
+                        <app-icons-library (close)="mostrar.set(false)" />
+                    }
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="cancel" type="button" (click)="onCancel()">Cancelar</button>
+                <button class="confirm" type="submit">Confirmar</button>
+            </div>          
+        </form>
+    </section>
+</div>

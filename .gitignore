@@ -25,3 +25,4 @@ node_modules/
 
 # Others
 *.log
+frontend/bun.lock

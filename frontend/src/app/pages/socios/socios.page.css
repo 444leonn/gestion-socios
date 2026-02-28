@@ -1,0 +1,13 @@
+@import 'tailwindcss';
+
+.title {
+    @apply flex flex-row items-center;
+    @apply mx-4 sm:mx-15 my-10;
+    @apply text-xl sm:text-3xl font-extrabold font-sans;
+    @apply dark:text-gray-200;
+}
+
+main {
+    @apply overflow-x-auto;
+    @apply flex flex-row justify-center items-center;
+}

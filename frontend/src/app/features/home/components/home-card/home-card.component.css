@@ -1,0 +1,28 @@
+@import 'tailwindcss';
+
+.card {
+    @apply relative;
+    @apply w-30 h-25 sm:w-40 sm:h-25 md:w-50 md:h-35 lg:w-70 lg:h-40;
+    @apply rounded-2xl;
+    @apply hover:shadow-gray-100 dark:hover:shadow-gray-950 hover:shadow-md hover:scale-105 transition-transform duration-250;
+    background: var(--card-color);
+}
+
+h1 {
+    @apply absolute top-0 left-0;
+    @apply mx-6 my-3;
+    @apply text-xs sm:text-lg lg:text-xl;
+    @apply font-sans font-bold;
+}
+
+.material-symbols-outlined {
+    @apply absolute bottom-0 sm:top-0 right-0;
+    @apply text-3xl sm:text-5xl lg:text-7xl;
+    @apply m-3
+}
+
+.spec {
+    @apply absolute bottom-0 left-0;
+    @apply m-8 my-5;
+    @apply text-2xl md:text-3xl lg:text-4xl font-medium;
+}

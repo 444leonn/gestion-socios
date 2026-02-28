@@ -1,0 +1,46 @@
+<div class="content">
+   @if (Socios.isLoading()) {
+      <p>Cargando Socios...</p>
+   } @else if (Socios.error()) {
+      <p class="text-red-400 dark:text-red-600">Error al cargar Socios: {{ Socios.error() }}</p>
+   } @else if (Socios.value()) {
+        <table>
+            <thead>
+                <tr>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO</th>
+                    <th>EMAIL</th>
+                    <th>TIPO</th>
+                    <th>CUOTA</th>
+                    <th>DEPORTES</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (socio of Socios.value(); track socio.id) {
+                    <tr>
+                        <td>{{ socio.nombre }}</td>
+                        <td>{{ socio.apellido }}</td>
+                        <td>{{ socio.mail }}</td>
+                        <td>{{ socio.tipoSocioId }}</td>
+                        <td>cuota</td>
+                        <td>futbol</td>
+                        <td>
+                            <button class="edit">
+                                <span class="material-symbols-outlined mr-1">edit</span>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="delete" (click)="handleClick(socio.id)" (onDelete)="Socios.reload()">
+                                <span class="material-symbols-outlined">delete</span>
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+   }
+
+
+</div>

@@ -1,0 +1,50 @@
+@import 'tailwindcss';
+
+nav {
+    @apply flex flex-col;
+    @apply w-30 sm:w-50;
+    @apply min-h-full;
+    @apply bg-white dark:bg-gray-950;
+    @apply border-r border-gray-200 dark:border-gray-800;
+}
+
+.logo {
+    @apply flex flex-col items-center;
+    @apply mx-4 my-2 sm:my-8 sm:mb-12;
+    @apply rounded-full;
+    @apply hover:scale-110 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-800 transition-transform;
+}
+
+.logo span {
+    @apply hidden sm:block;
+    @apply text-xl font-semibold;
+    @apply dark:text-gray-300;
+}
+
+.logo svg {
+    @apply object-cover;
+    @apply h-20 w-20 sm:h-15 sm:w-15;
+    @apply transition-transform duration-300;
+}
+
+.logo:hover svg {
+    @apply scale-110 rotate-10 transform transition;
+}
+
+.links {
+    @apply scroll-auto;
+}
+
+.item {
+    @apply flex flex-row items-center;
+    @apply m-4;
+    @apply rounded-2xl;
+    @apply hover:shadow-md hover:shadow-gray-300 dark:hover:shadow-gray-900;
+    @apply hover:scale-105 transition-transform duration-300;
+    @apply dark:text-gray-200;
+}
+
+.material-symbols-outlined {
+    @apply mr-2;
+    @apply text-2xl md:text-3xl lg:text-4xl;
+}

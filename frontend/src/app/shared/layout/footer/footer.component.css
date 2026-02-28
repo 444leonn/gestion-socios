@@ -1,0 +1,33 @@
+@import 'tailwindcss';
+
+footer {
+    @apply flex flex-row items-center justify-center;
+    @apply w-full h-15 sm:h-20;
+    @apply bg-white dark:bg-gray-950;
+    @apply border-t border-gray-200 dark:border-gray-800;
+    @apply dark:text-white;
+}
+
+svg {
+    @apply h-5 w-5 sm:h-7 sm:w-7;
+}
+
+.link {
+    @apply flex flex-row items-center;
+    @apply mx-2 sm:mx-10 md:mx-15 lg:mx-20;
+}
+
+.link-name {
+    @apply hover:underline;
+}
+
+.socials {
+    @apply sm:absolute sm:right-0;
+    @apply flex flex-row;
+    @apply mx-4 sm:mx-10;
+}
+
+.socials a {
+    @apply mx-2;
+    @apply hover:scale-110 transition-transform duration-300;
+}

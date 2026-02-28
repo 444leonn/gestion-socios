@@ -1,0 +1,40 @@
+@import 'tailwindcss';
+
+.sport-card {
+    @apply relative flex flex-col items-center justify-center-safe;
+    @apply w-30 h-25 sm:w-35 sm:h-30 md:w-40 md:h-35 lg:w-45 lg:h-40 xl:w-50 xl:h-45 m-2;
+    @apply border border-gray-600 rounded-2xl;
+    @apply bg-gray-100 dark:bg-blue-950;
+}
+
+.material-symbols-outlined {
+    @apply items-center justify-center flex flex-row;
+    @apply dark:text-gray-300;
+    @apply text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl;
+}
+
+.sport-card:hover .icon {
+    @apply rotate-15 transform transition duration-300;
+}
+
+h1 {
+    @apply w-full text-center;
+    @apply sm:mt-4;
+    @apply capitalize;
+    @apply text-base lg:text-lg xl:text-xl;
+    @apply dark:text-gray-100;
+    @apply overflow-hidden text-ellipsis;
+}
+
+button {
+    @apply absolute bottom-0 right-0;
+    @apply flex flex-row items-center justify-center;
+    @apply h-6 w-6 md:h-8 md:w-8 m-2;
+    @apply border border-red-700 bg-red-600 dark:bg-red-700 rounded-md;
+    @apply bg-red-500 dark:bg-red-600;
+    @apply hover:cursor-pointer hover:scale-95 transition-transform duration-150;
+}
+
+button span {
+    @apply text-base md:text-2xl;
+}

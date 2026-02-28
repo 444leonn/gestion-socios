@@ -1,0 +1,14 @@
+<header class="title">
+    <h1>Gestion Socios</h1>
+    <app-add-button (toggle)="mostrar.set(!mostrar())" />
+    @if (mostrar()) {
+      <app-add-socio-modal 
+      (closeModal)="mostrar.set(false)"
+      (socioCreated)="Socios.reload()"
+      />
+   }
+</header>
+
+<main>
+   <app-socios-table />
+</main>
